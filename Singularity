@@ -13,11 +13,6 @@ From: haskell:latest
     apt-get -y install wget git cmake g++ cabal-install
     apt-get clean
     cabal update
-    
-    cd / && mkdir repo && cd repo
-    git clone https://github.com/mightybyte/monad-challenges.git
-    cd monad-challenges
-    cabal install
 
 %test
     cabal --version 

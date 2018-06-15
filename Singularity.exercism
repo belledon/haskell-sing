@@ -1,0 +1,17 @@
+BootStrap: localimage
+From: haskell_base.simg
+
+%runscript
+    echo "SINGULARITY RUNSCRIPT"
+    echo "Arguments received: $*"
+
+%post
+  mkdir /src
+  cd /src
+  wget https://github.com/exercism/cli/releases/download/v2.4.1/exercism-linux-64bit.tgz
+  tar -xzvf exercism-linux-64bit.tgz
+  mv exercism /usr/local/bin
+  rm exercism-linux-64bit.tgz
+
+%test
+    cabal --version 
